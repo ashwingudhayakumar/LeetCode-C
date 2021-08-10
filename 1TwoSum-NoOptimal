@@ -1,0 +1,27 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+
+        int *retArr=(int *)malloc(2*sizeof(int));//according to the description return array must be malloced and only for two index we created array also two index
+       if(retArr==NULL){                      //if array not created means we have to return null
+       *returnSize=0;                         //we have to mention the return size with that only in driver program the for loop is gonna print our array;
+       return NULL;
+       }
+       for(int i=0;i<numsSize-1;i++){         //no repetation is allowed thats why i starts from zero and j starts from next of i
+       for(int j=i+1;j<numsSize;j++){
+       if(nums[i]+nums[j]==target){           
+       *returnSize=2;
+       retArr[0]=i;
+       retArr[1]=j;
+       return retArr;
+       }
+       }
+      
+       
+    }
+     *returnSize=0;
+       free(retArr);
+       return NULL;
+}
