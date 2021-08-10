@@ -4,8 +4,10 @@
 
 int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 
+   
+
         int *retArr=(int *)malloc(2*sizeof(int));//according to the description return array must be malloced and only for two index we created array also two index
-       if(retArr==NULL){                      //if array not created means we have to return null
+       if(retArr==NULL||nums==NULL||numsSize<2){                      //if array not created means we have to return null
        *returnSize=0;                         //we have to mention the return size with that only in driver program the for loop is gonna print our array;
        return NULL;
        }
